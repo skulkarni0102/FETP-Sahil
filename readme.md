@@ -24,6 +24,10 @@ CLIENT_SECRET = "GOOGLE_CLIENT_SECRET"
 
 ## Screenshots
 
-![Image](https://github.com/skulkarni0102/FETP-Sahil/Screenshots/ss1.jpg)
-![Image](https://github.com/skulkarni0102/FETP-Sahil/Screenshots/ss2.jpg)
-![Image](https://github.com/skulkarni0102/FETP-Sahil/Screenshots/ss3.jpg)
+![Image](https://github.com/skulkarni0102/FETP-Sahil/blob/main/Screenshots/ss1.png)
+
+##
+![Image](https://github.com/skulkarni0102/FETP-Sahil/blob/main/Screenshots/ss2.png)
+
+##
+![Image](https://github.com/skulkarni0102/FETP-Sahil/blob/main/Screenshots/ss3.png)
