@@ -1,8 +1,9 @@
 import json
 import os
 import sqlite3
+import Diamond
 
-from flask import Flask, redirect, request, url_for, render_template
+from flask import Flask, redirect, request, url_for, render_template, session
 from flask_login import (
     LoginManager,
     current_user,
@@ -41,7 +42,11 @@ def load_user(user_id):
 
 @app.route("/")
 def index():
-    return render_template('home.html', current_user=current_user)
+    pattern = session.pop('pattern', None)
+    if pattern:
+        return render_template('home.html', current_user=current_user, pattern=pattern)
+    else:
+        return render_template('home.html', current_user=current_user)
     
 def get_google_provider_cfg():
     return requests.get(GOOGLE_DISCOVERY_URL).json()
@@ -110,6 +115,20 @@ def callback():
 def logout():
     logout_user()
     return redirect(url_for("index"))
+
+@app.route("/print",methods=['GET', 'POST'])
+def pattern():
+    STRING=""
+    session.pop('pattern', None)
+    if request.method == 'POST':
+        val = int(request.form['input'])
+        if(val>100 or val<1 ):
+            STRING="Please Enter Valid Number"
+        else:
+            STRING = Diamond.pattern(val)
+    session['pattern']=STRING
+    return redirect(url_for("index"))
+
 
 if __name__ == "__main__":
     app.run(ssl_context="adhoc")
