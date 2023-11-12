@@ -4,7 +4,8 @@ This is an assessment of Google authentication and pattern printing.
 
 ## Installation
 
-you can get your google credential [here](https://console.cloud.google.com/apis/credentials)
+you can get your google credential [here](https://console.cloud.google.com/apis/credentials) and in Authorized redirect URIs add -> https://127.0.0.1:5000/login/callback
+
 ```bash
 python -m venv <virtual-environment-name>
 .\env\Scripts\activate
